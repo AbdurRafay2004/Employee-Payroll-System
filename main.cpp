@@ -6,16 +6,24 @@ Employee Payroll System:
 */
 #include <iostream>
 using namespace std;
+//Declaring the classes in case needed
+class departments;
+class employees;
+class payroll;
 
-class HR{
-
-};
 class departments{
 
 };
+
+class HR{
+private:
+public:
+};
+
 class employees{
 
 };
+
 class payroll{
 
 };

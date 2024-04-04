@@ -1,58 +1,64 @@
-Project info
+C++ Project info
 Employee Payroll System:
  - Design classes for employees, departments, and payrolls, HR.
  - Implement functionalities like calculating salaries, adding new employees, and displaying payroll information.
 
 
-##
-HR Class:
-This class could be responsible for a range of tasks, such as:
-Adding New Employees: Storing new employee details in the system.
-Updating Employee Information: Managing changes in employee details, promotions, or terminations.
-Overseeing Payroll: Ensuring that the payroll is processed correctly, including salary calculations, deductions, and tax withholdings.
-
-Functionality:
-The HR class might include methods like:
-addEmployee(): To add a new employee’s information to the database.
-updateEmployee(): To update existing employee details.
-processPayroll(): To calculate and finalize the salaries for the pay period.
-
-##
 Employee Class
-
 Responsibilities:
-
-Storing Personal Details: Holds information such as name, ID, and contact details.
-Tracking Employment Data: Keeps records of position, department, and salary.
+Personal Information: Store details like name, ID, and contact information.
+Employment Details: Keep track of the employee’s role, department, and employment status (full-time, part-time, contractor).
 
 Functionality:
+calculatePay(): Calculate the pay based on hours worked and pay rate.
+displayEmployeeDetails(): Show the employee’s personal and employment details.
 
-recordDetails(): To input and store the employee’s personal and employment details.
-updateDetails(): To modify existing information if there are changes.
-displayInformation(): To show the employee’s details on request.
 
-##
+
 Department Class
-
 Responsibilities:
-
-Managing Department Information: Contains details about the department such as name and list of employees.
-Departmental Operations: Oversees the functions specific to the department.
+Department Information: Hold information about the department such as name and list of employees.
+Departmental Functions: Manage operations specific to the department.
 
 Functionality:
+addEmployee(): Add an employee to the department.
+removeEmployee(): Remove an employee from the department.
+displayDepartmentDetails(): Show details about the department and its employees.
 
-addEmployeeToDepartment(): To assign an employee to the department.
-removeEmployeeFromDepartment(): To remove an employee from the department.
-listEmployees(): To display all employees within the department.
 
-##
+
 Payroll Class
 Responsibilities:
+Payroll Processing: Handle the calculation of salaries, including deductions and taxes.
+Payroll Records: Maintain records of all payroll transactions.
 
-Salary Calculations: Computes the salaries of employees based on their work hours, overtime, etc.
-Payroll Reports: Generates detailed reports for accounting and auditing purposes.
 Functionality:
+processPayrollForEmployee(): Calculate the salary for an individual employee.
+generatePayrollReport(): Create a report detailing payroll information for all employees.
 
-calculateSalary(): To compute the monthly salary for each employee.
-generateReport(): To create a payroll report that can be printed or saved.
-displayPayroll(): To show the payroll details for a particular pay period.
+
+
+HR Class
+Responsibilities:
+Employee Management: Oversee the addition and updating of employee records.
+Payroll Oversight: Ensure that payroll is processed accurately and on time.
+
+Functionality:
+addNewEmployee(): Add a new employee to the system.
+updateEmployeeInformation(): Update existing employee records.
+displayPayrollInformation(): Show payroll details for employees.
+
+
+
+
+
+
+########################
+
+Employee details:
+
+Employee name: 
+Employee ID:
+Employee Department: none by default
+Email:
+Salary: // monthly 

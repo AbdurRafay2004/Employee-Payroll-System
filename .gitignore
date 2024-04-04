@@ -39,3 +39,7 @@ Makefile
 .replit
 replit.nix
 .breakpoints
+emp_usingVector.cpp
+linkedList_for8yo.cpp
+test2.cpp
+settings.json

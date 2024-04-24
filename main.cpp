@@ -66,6 +66,7 @@ public:
   void setEmail(string email) { this->email = email; }
   void setPayrate(double payrate) { this->payrate = payrate; }
 
+  // Function to display employee details
   void personal_Information() {
     cout << endl;
     cout << "Employee personal Information: " << endl;
@@ -75,12 +76,15 @@ public:
     cout << "   Email: " << email << endl;
     cout << "   Payrate: " << payrate << endl;
   }
+
+  // Functoin to display basic emplyee information
   void employee_Information() {
     cout << "-  ID: " << id << endl;
     cout << "   Name: " << name << endl;
     cout << "   Deparment: " << department << endl;
   }
 };
+
 // Initialize the static head pointer
 Employee *Employee::head = nullptr;
 
@@ -101,7 +105,7 @@ public:
     cout << endl;
     cout << "Employee List: " << endl;
     while (current != nullptr) {
-      current->employee_Information();
+      current->employee_Information();//call from employee class
       cout << endl;
       current = current->next;
     }
@@ -110,7 +114,7 @@ public:
 
 class Payroll {
 public:
-  // Employee &emp, int hoursWorked
+  // Calculate salary by multiplying payrate and hours worked
   void calculateSalary(Employee &emp, int hoursWorked) {
 
     double newSalary = emp.getPayrate() * hoursWorked;

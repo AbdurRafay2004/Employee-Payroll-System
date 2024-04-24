@@ -15,7 +15,8 @@ class Departments;
 class Payroll;
 class HR;
 
-class Employee {
+class Employee
+{
 public:
   string name;
   int id;
@@ -30,24 +31,31 @@ public:
   Employee(string name, int id, string email, double payrate,
            string department = "none")
       : name(name), id(id), department(department), email(email),
-        payrate(payrate), next(nullptr) {
+        payrate(payrate), next(nullptr)
+  {
     this->next = head;
     head = this;
     cout << "\nEmployee " << name << " added successfully" << endl;
   }
 
   // destructor
-  ~Employee() {
+  ~Employee()
+  {
     // cout << "\nEmployee " << name << " removed successfully" << endl;
 
-    if (this == head) {
+    if (this == head)
+    {
       head = head->next;
-    } else {
+    }
+    else
+    {
       Employee *current = head;
-      while (current != nullptr && current->next != this) {
+      while (current != nullptr && current->next != this)
+      {
         current = current->next;
       }
-      if (current != nullptr) {
+      if (current != nullptr)
+      {
         current->next = this->next;
       }
     }
@@ -67,7 +75,8 @@ public:
   void setPayrate(double payrate) { this->payrate = payrate; }
 
   // Function to display employee details
-  void personal_Information() {
+  void personal_Information()
+  {
     cout << endl;
     cout << "Employee personal Information: " << endl;
     cout << "   Name: " << name << endl;
@@ -78,7 +87,8 @@ public:
   }
 
   // Functoin to display basic emplyee information
-  void employee_Information() {
+  void employee_Information()
+  {
     cout << "-  ID: " << id << endl;
     cout << "   Name: " << name << endl;
     cout << "   Deparment: " << department << endl;
@@ -88,36 +98,46 @@ public:
 // Initialize the static head pointer
 Employee *Employee::head = nullptr;
 
-class Departments {
+class Departments
+{
 public:
   // add employee to department
-  void addEmployeeToDepartment(Employee &employee, string dept) {
+  void addEmployeeToDepartment(Employee &employee, string dept)
+  {
     cout << "\nAssigning employee " << employee.name
          << " to department: " << dept << endl;
     employee.department = dept;
   }
 };
 
-class HR {
+class HR
+{
 public:
-  static void employeeList() {
+  static void employeeList()
+  {
     Employee *current = Employee::head;
     cout << endl;
     cout << "Employee List: " << endl;
-    while (current != nullptr) {
-      current->employee_Information();//call from employee class
+    while (current != nullptr)
+    {
+      current->employee_Information(); // call from employee class
       cout << endl;
       current = current->next;
     }
   }
 };
 
-class Payroll {
+class Payroll
+{
 public:
-  // Calculate salary by multiplying payrate and hours worked
-  void calculateSalary(Employee &emp, int hoursWorked) {
+  // Method to calculate the monthly salary of an employee based on the hours worked
+  void calculateSalary(Employee &emp, int hoursWorked)
+  {
 
+    // Calculate the new salary by multiplying the pay rate of the employee with the hours worked
     double newSalary = emp.getPayrate() * hoursWorked;
+
+    // Display the payroll information
     cout << "\nPayroll Information:\n";
     emp.employee_Information();
     cout << "   Working hours: " << hoursWorked << endl;
@@ -125,23 +145,24 @@ public:
   }
 };
 
-int main() {
+int main()
+{
   Payroll payroll;
   Departments depts;
   HR hr;
-  
+
   Employee emp1("Ema", 1, "ema@example.com", 200);
   Employee emp3("Rafay", 2, "rafay@example.com", 250);
   Employee emp4("Tuhin", 3, "tuhin@example.com", 200);
   Employee emp2("Tasmim", 4, "tasmim@example.com", 300);
-  
-  depts.addEmployeeToDepartment(emp1, "IT");//adding employee to a department
 
-  emp1.personal_Information();//printing employee information
+  depts.addEmployeeToDepartment(emp1, "IT"); // adding employee to a department
 
-  payroll.calculateSalary(emp1, 40);//calculating salary of employee 1
+  emp1.personal_Information(); // printing employee information
 
-  hr.employeeList();//printing employee list
-  
+  payroll.calculateSalary(emp1, 40); // calculating salary of employee 1
+
+  hr.employeeList(); // printing employee list
+
   return 0;
 }

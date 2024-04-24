@@ -125,17 +125,19 @@ int main() {
   Payroll payroll;
   Departments depts;
   HR hr;
-  Employee emp1("John Doe", 1, "ztejd@example.com", 200);
-  depts.addEmployeeToDepartment(emp1, "IT");
+  
+  Employee emp1("Ema", 1, "ema@example.com", 200);
+  Employee emp3("Rafay", 2, "rafay@example.com", 250);
+  Employee emp4("Tuhin", 3, "tuhin@example.com", 200);
+  Employee emp2("Tasmim", 4, "tasmim@example.com", 300);
+  
+  depts.addEmployeeToDepartment(emp1, "IT");//adding employee to a department
 
-  emp1.personal_Information();
+  emp1.personal_Information();//printing employee information
 
-  Employee emp2("abcd", 2, "rdlnk@example.com", 300);
-  payroll.calculateSalary(emp1, 40); //
+  payroll.calculateSalary(emp1, 40);//calculating salary of employee 1
 
-  hr.employeeList();
-
-  Employee emp3("efgh", 3, "ztejd@example.com", 250);
-
-  hr.employeeList();
+  hr.employeeList();//printing employee list
+  
+  return 0;
 }
